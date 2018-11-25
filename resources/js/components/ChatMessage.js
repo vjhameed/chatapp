@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import TimeAgo from 'timeago-react';
 
 export default class ChatMessage extends Component {
 
@@ -8,6 +9,7 @@ export default class ChatMessage extends Component {
 
     componentDidMount() {
         this.scrollToBottom();
+        console.log(this.props.date)
     }
 
 
@@ -19,7 +21,8 @@ export default class ChatMessage extends Component {
                     <div className="user-level">21</div>
                 </div>
                 <div className="message">
-                    <time className="timeago" dateTime="{this.props.date}" />
+                    <TimeAgo className='timeago'
+                        datetime={this.props.date} />
                     <div className="user-name">
                         {this.props.user}
                     </div>

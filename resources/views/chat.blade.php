@@ -12,6 +12,7 @@
 @section('scripts')
 <script src="{{asset('js/moment.js')}}"></script>
 <script src="{{asset('js/emojionearea.min.js')}}"></script>
-<script src="{{asset('js/timeago.js')}}"></script>
-<script src="{{asset('js/chatbox.js')}}"></script>
+{{--
+<script src="{{asset('js/timeago.js')}}"></script> --}} {{--
+<script src="{{asset('js/chatbox.js')}}"></script> --}}
 @endsection
