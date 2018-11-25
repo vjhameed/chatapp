@@ -85337,7 +85337,7 @@ var ChatBox = function (_Component) {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'form',
                     { onSubmit: this.handleSubmit.bind(this) },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.message, onChange: this.handleChange.bind(this), className: 'form-control chat-input' }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', { 'class': 'chat-input', onChange: this.handleChange.bind(this), rows: '3', value: this.state.message }),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'button',
                         { type: 'submit', className: 'send-btn' },
