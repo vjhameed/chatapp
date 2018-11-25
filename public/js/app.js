@@ -85337,7 +85337,7 @@ var ChatBox = function (_Component) {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'form',
                     { onSubmit: this.handleSubmit.bind(this) },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', { 'class': 'chat-input', onChange: this.handleChange.bind(this), rows: '3', value: this.state.message }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', { className: 'chat-input', onChange: this.handleChange.bind(this), rows: '3', value: this.state.message }),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'button',
                         { type: 'submit', className: 'send-btn' },
@@ -85685,6 +85685,8 @@ var ChatContainer = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_timeago_react__ = __webpack_require__(179);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_timeago_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_timeago_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_moment__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -85692,6 +85694,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -85714,7 +85717,14 @@ var ChatMessage = function (_Component) {
         key: 'componentDidMount',
         value: function componentDidMount() {
             this.scrollToBottom();
-            console.log(this.props.date);
+            // var time = new Date(this.props.date)
+        }
+    }, {
+        key: 'showTime',
+        value: function showTime() {
+            var date = __WEBPACK_IMPORTED_MODULE_2_moment___default.a.utc(this.props.date);
+            var changed = __WEBPACK_IMPORTED_MODULE_2_moment___default()(date).local();
+            return changed.toDate();
         }
     }, {
         key: 'render',
@@ -85738,7 +85748,7 @@ var ChatMessage = function (_Component) {
                     'div',
                     { className: 'message' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_timeago_react___default.a, { className: 'timeago',
-                        datetime: this.props.date }),
+                        datetime: this.showTime() }),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
                         { className: 'user-name' },

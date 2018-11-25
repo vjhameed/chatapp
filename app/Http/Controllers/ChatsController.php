@@ -22,7 +22,7 @@ class ChatsController extends Controller
      */
     public function fetchMessages()
     {
-        return Message::with('user')->get();
+        return Message::orderBy('created_at')->with('user')->get();
     }
 
     /**

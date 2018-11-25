@@ -39,7 +39,7 @@ export default class ChatBox extends Component {
         return (
             <div className="chat-box">
                 <form onSubmit={this.handleSubmit.bind(this)}>
-                    <textarea class='chat-input' onChange={this.handleChange.bind(this)} rows="3" value={this.state.message}></textarea>
+                    <textarea className='chat-input' onChange={this.handleChange.bind(this)} rows="3" value={this.state.message}></textarea>
                     <button type='submit' className="send-btn">SEND</button>
                 </form>
             </div>

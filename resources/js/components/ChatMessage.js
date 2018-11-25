@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import TimeAgo from 'timeago-react';
+import moment from 'moment'
 
 export default class ChatMessage extends Component {
 
@@ -9,7 +10,13 @@ export default class ChatMessage extends Component {
 
     componentDidMount() {
         this.scrollToBottom();
-        console.log(this.props.date)
+        // var time = new Date(this.props.date)
+    }
+
+    showTime() {
+        var date = moment.utc(this.props.date)
+        var changed = moment(date).local()
+        return changed.toDate()
     }
 
 
@@ -22,7 +29,7 @@ export default class ChatMessage extends Component {
                 </div>
                 <div className="message">
                     <TimeAgo className='timeago'
-                        datetime={this.props.date} />
+                        datetime={this.showTime()} />
                     <div className="user-name">
                         {this.props.user}
                     </div>
