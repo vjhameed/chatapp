@@ -115,25 +115,30 @@
 
 .chat-module .conversations-list .conversation .message .text{
     color: white;
-    font-size: 0.9em;
+    font-size: 0.8em;
     margin-top: -3px;
 }
 
 .chat-box{
     position: relative;
+    border:1px solid #00E676;
 }
 
 .chat-box .chat-input{
     color:white;
     background: black;
-    padding-bottom: 50px;
-    border-color: #00E676;
+    width:78%;
+    border:0;
+    font-size: 0.8em    
+}
+
+.chat-box .chat-input:focus{
+    outline: none
 }
 
 .chat-box .chat-input:focus{
     box-shadow: none;
     border-color: #00E676;
-    /* border: 1px solid #ced4da; */
 }
 
 .chat-box .send-btn{
@@ -151,10 +156,6 @@
     outline:none;
 }
 /* 
-.emojionearea-editor{
-    color:white !important;
-} */
-
 
 /* width */
 ::-webkit-scrollbar {
